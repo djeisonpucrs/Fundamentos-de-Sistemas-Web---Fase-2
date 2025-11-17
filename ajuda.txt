@@ -1,0 +1,25 @@
+PET SHOP - Arquivo de Ajuda
+
+Este arquivo descreve as funcionalidades do sistema web (Fase 2).
+
+Páginas incluídas:
+- index.html: página inicial com carrossel, apresentação e links.
+- produtos.html: listagem de produtos (3 categorias) com imagem, descrição e preço.
+- servicos.html: descrição dos serviços (banho e tosa, tele-busca) e valores.
+- cadastro.html: formulário de cadastro do cliente e do pet, com agendamento.
+- contato.html: informações de contato e formulário de mensagem.
+- css/style.css: estilos do site.
+- js/main.js: validação do formulário, restrição de datas, e armazenamento em localStorage.
+
+Como usar o formulário de cadastro:
+1. Preencha os campos obrigatórios marcados com *.
+2. Escolha o serviço e o método (tele-busca ou levar ao local).
+3. Selecione data e hora (não é permitido escolher datas passadas).
+4. Clique em Enviar — os dados serão salvos no localStorage do navegador e um resumo será mostrado.
+
+Acessibilidade:
+- Todas as imagens possuem atributo alt descritivo.
+- Campos possuem labels correspondentes.
+- Mensagens dinâmicas usam aria-live para leitores de tela.
+
+Contato para suporte: contato@petshop.com

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro - Pet Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Pet Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu2">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link active" href="cadastro.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="bg-white py-5 shadow-sm">
+  <div class="container text-center">
+    <h1 class="fw-bold text-primary">Cadastro do Cliente e Pet</h1>
+    <p class="text-muted">Preencha o formulário para cadastrar seu animal e agendar um serviço.</p>
+  </div>
+</header>
+
+<main class="container py-5">
+  <div id="statusMessage" aria-live="polite"></div>
+
+  <form id="cadastroForm" class="card shadow-sm p-4" novalidate>
+    <h3 class="mb-3">Dados do Cliente</h3>
+
+    <div class="mb-3">
+      <label for="clienteNome" class="form-label">Nome completo *</label>
+      <input id="clienteNome" name="clienteNome" type="text" class="form-control" placeholder="Seu nome" required>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label for="clienteCPF" class="form-label">CPF *</label>
+        <input id="clienteCPF" name="clienteCPF" type="text" class="form-control" placeholder="000.000.000-00" required>
+      </div>
+      <div class="col-md-6">
+        <label for="clienteTelefone" class="form-label">Telefone *</label>
+        <input id="clienteTelefone" name="clienteTelefone" type="tel" class="form-control" placeholder="(11) 9XXXX-XXXX" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="clienteEmail" class="form-label">E-mail *</label>
+      <input id="clienteEmail" name="clienteEmail" type="email" class="form-control" placeholder="seu@email.com" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="clienteEndereco" class="form-label">Endereço *</label>
+      <input id="clienteEndereco" name="clienteEndereco" type="text" class="form-control" placeholder="Rua, nº, complemento" required>
+    </div>
+
+    <hr class="my-4">
+
+    <h3 class="mb-3">Dados do Pet</h3>
+
+    <div class="mb-3">
+      <label for="petNome" class="form-label">Nome do Pet *</label>
+      <input id="petNome" name="petNome" type="text" class="form-control" placeholder="Nome do animal" required>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label for="petRaca" class="form-label">Raça</label>
+        <input id="petRaca" name="petRaca" type="text" class="form-control" placeholder="Raça do pet">
+      </div>
+      <div class="col-md-6">
+        <label for="petIdade" class="form-label">Idade (anos)</label>
+        <input id="petIdade" name="petIdade" type="number" class="form-control" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input id="petVacinado" name="petVacinado" class="form-check-input" type="checkbox">
+      <label for="petVacinado" class="form-check-label">Vacinado</label>
+    </div>
+
+    <hr class="my-4">
+
+    <h3 class="mb-3">Agendamento</h3>
+
+    <div class="mb-3">
+      <label for="servicoSelect" class="form-label">Serviço *</label>
+      <select id="servicoSelect" name="servico" class="form-select" required>
+        <option value="">-- Selecione --</option>
+        <option value="Banho e Tosa Tradicional">Banho e Tosa Tradicional - R$ 80,00</option>
+        <option value="Banho e Tosa com Tele-Busca">Banho e Tosa com Tele-Busca - R$ 120,00</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label d-block">Método *</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="metodo" id="metodoLocal" value="Local" required>
+        <label class="form-check-label" for="metodoLocal">Levar até o Pet Shop</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="metodo" id="metodoTele" value="Tele-Busca">
+        <label class="form-check-label" for="metodoTele">Tele-Busca</label>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label for="agendamentoData" class="form-label">Data *</label>
+        <input id="agendamentoData" name="agendamentoData" type="date" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label for="agendamentoHora" class="form-label">Horário *</label>
+        <input id="agendamentoHora" name="agendamentoHora" type="time" class="form-control" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="observacoes" class="form-label">Observações</label>
+      <textarea id="observacoes" name="observacoes" class="form-control" rows="3" placeholder="Informações adicionais"></textarea>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="submit" class="btn btn-success">Enviar Cadastro e Agendar</button>
+      <button type="reset" class="btn btn-secondary">Limpar</button>
+    </div>
+  </form>
+
+  <section id="resumoAgendamento" class="mt-4" aria-live="polite"></section>
+</main>
+
+<footer class="bg-primary text-white text-center py-3">
+  © 2025 Pet Shop — Todos os direitos reservados.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

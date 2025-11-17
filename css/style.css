@@ -1,0 +1,29 @@
+/* style.css - visual moderno e consistente com a home page */
+:root{
+  --brand:#0d6efd;
+  --brand-2:#4aa3ff;
+  --muted:#6c757d;
+}
+
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f5f7fa; color:#212529; margin:0; padding:0;}
+a{color:var(--brand);}
+img{max-width:100%; height:auto; display:block;}
+
+.navbar-brand{letter-spacing:0.3px;}
+header h1, header p{margin:0;}
+
+.carousel-inner img{width: 100%;
+    height: 480px;
+    object-fit: contain;
+    object-position: center;
+    background-color: hwb(0 100% 0%);}
+
+/* Cards and spacing */
+.card{border-radius:12px;}
+.card .card-body p{margin-bottom:0.5rem;}
+
+/* Form */
+form input, form select, form textarea{border-radius:8px;}
+
+/* Footer */
+footer{position:relative;}
